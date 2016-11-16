@@ -1,7 +1,8 @@
-FROM yangchuansheng/alpine
-MAINTAINER yangchuansheng <yangchuansheng33@gmail.com>
+FROM perl:5.22
+MAINTAINER sjdy521 <sjdy521@163.com>
+RUN cpanm Mojo::Webqq \
+    && cpanm Mojo::SMTP::Client \
+    && Mojo::IRC::Server::Chinese \
 WORKDIR /root
-RUN PATH=/usr/local/Mojo_ActivePerl/site/bin:/usr/local/Mojo_ActivePerl/bin:$PATH \
-    && export PATH
-COPY qq1.pl qq1.pl
-CMD ["/usr/local/Mojo_ActivePerl/bin/perl","qq1.pl"]
+COPY qq.pl qq.pl
+CMD ["perl","qq.pl"]
