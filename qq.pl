@@ -20,35 +20,45 @@ $client->on(model_update_fail=>sub{
 #$client->load("PushPlug");
 $client->add_job("定时提醒","21:47",sub{my $friend = $client->search_friend(qq=>804539882);$client->send_message($friend,"@每日一文
 http://meiriyiwen.com");});
-$client->add_job("定时提醒","21:47",sub{my $group = $client->search_group(gnumber=>484043598);$client->send_group_message($group,"@全体成员 | #每日一文
+$client->add_job("定时提醒","21:47",sub{my $group = $client->search_group(gnumber=>484043598);$client->send_group_message($group,"@全体成员 |
+#每日一文
 http://meiriyiwen.com");});
-#$client->add_job("定时提醒","21:47",sub{my $group = $client->search_group(gnumber=>161153897);$client->send_group_message($group,"@全体成员 | #每日一文
+#$client->add_job("定时提醒","21:47",sub{my $group = $client->search_group(gnumber=>161153897);$client->send_group_message($group,"@全体成员 |
+#每日一文
 #meiriyiwen.com");});
-#$client->add_job("定时提醒","21:47",sub{my $group = $client->search_group(gnumber=>114921848);$client->send_group_message($group,"@全体成员 | #每日一文
+#$client->add_job("定时提醒","21:47",sub{my $group = $client->search_group(gnumber=>114921848);$client->send_group_message($group,"@全体成员 |
+#每日一文
 #meiriyiwen.com");});
-#$client->add_job("定时提醒","21:47",sub{my $group = $client->search_group(gname=>"Free - 资源分享");$client->send_group_message($group,"@全体成员 | #每日一文
+#$client->add_job("定时提醒","21:47",sub{my $group = $client->search_group(gname=>"Free -
+资源分享");$client->send_group_message($group,"@全体成员 | #每日一文
 #meiriyiwen.com");});
-#$client->add_job("定时提醒","21:47",sub{my $group = $client->search_group(gnumber=>140237507);$client->send_group_message($group,"@全体成员 | #每日一文
+#$client->add_job("定时提醒","21:47",sub{my $group = $client->search_group(gnumber=>140237507);$client->send_group_message($group,"@全体成员 |
+#每日一文
 #meiriyiwen.com");});
-#$client->add_job("定时提醒","21:47",sub{my $group = $client->search_group(gnumber=>174563176);$client->send_group_message($group,"@全体成员 | #每日一文
+#$client->add_job("定时提醒","21:47",sub{my $group = $client->search_group(gnumber=>174563176);$client->send_group_message($group,"@全体成员 |
+#每日一文
 #http://meiriyiwen.com");});
-$client->add_job("定时提醒","21:47",sub{my $group = $client->search_group(gnumber=>212260218);$client->send_group_message($group,"@全体成员 | #每日一文
+$client->add_job("定时提醒","21:47",sub{my $group = $client->search_group(gnumber=>212260218);$client->send_group_message($group,"@全体成员 |
+#每日一文
 http://meiriyiwen.com");});
-$client->add_job("定时提醒","21:47",sub{my $group = $client->search_group(gnumber=>365431365);$client->send_group_message($group,"@全体成员 | #每日一文
+$client->add_job("定时提醒","21:47",sub{my $group = $client->search_group(gnumber=>365431365);$client->send_group_message($group,"@全体成员 |
+#每日一文
 http://meiriyiwen.com");});
 $client->load("Qiandao");
 #$client->load("IRCshell");
 #$client->load("Openqq",data=>{listen=>{host=>$host,port=>$port}, post_api=>$post_api});
-$client->load("KnowledgeBase",data=>{
+$client->load("KnowledgeBase2",data=>{
     #allow_group => ["南通大学城淮安老乡群"],  #可选，允许插件的群，可以是群名称或群号码
     #ban_group   => ["江苏多肉植物交流群"], #可选，禁用该插件的群，可以是群名称或群号码
-    file => './KnowledgeBase.dat', #数据库保存路径
+#    file => './KnowledgeBase2.txt', #数据库保存路径
     learn_command  => 'study',     #自定义学习指令关键字
     delete_command =>'del',      #自定义删除指令关键字
     learn_operator => [804539882], #允许学习权限的操作人qq号
     delete_operator => [804539882], #允许删除权限的操作人qq号
 });
 $client->load("ProgramCode");
+$client->load("Pu");
+$client->load("ZiYue");
 $client->load("FuckDaShen");
 $client->on(before_send_message=>sub{
     my($client,$msg) = @_;
