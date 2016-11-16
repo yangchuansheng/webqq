@@ -30,7 +30,7 @@ http://meiriyiwen.com");});
 #每日一文
 #meiriyiwen.com");});
 #$client->add_job("定时提醒","21:47",sub{my $group = $client->search_group(gname=>"Free -
-资源分享");$client->send_group_message($group,"@全体成员 | #每日一文
+#资源分享");$client->send_group_message($group,"@全体成员 | #每日一文
 #meiriyiwen.com");});
 #$client->add_job("定时提醒","21:47",sub{my $group = $client->search_group(gnumber=>140237507);$client->send_group_message($group,"@全体成员 |
 #每日一文
