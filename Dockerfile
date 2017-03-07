@@ -4,8 +4,7 @@ ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN cpanm Encode::Locale IO::Socket::SSL Mojolicious Mojo::Webqq \
     && cpanm Mojo::SMTP::Client \
-    && cpanm Mojo::Webqq::Plugin::IPWhere \
-    && cpanm Mojo::Webqq::Plugin::LCMD \
+    && cpanm IP::IPwhere IP::QQWry \
     && cpanm --mirror http://mirrors.163.com/cpan/ ZHOUYI::ZhanPu \
     && cpanm Term::ANSIColor \
     && mkdir /root/webqq
