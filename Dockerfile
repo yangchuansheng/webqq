@@ -1,6 +1,9 @@
 FROM perl:5.22
 MAINTAINER sjdy521 <sjdy521@163.com>
+RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
 RUN cpanm Mojo::Webqq \
     && cpanm Mojo::SMTP::Client \
     && cpanm --mirror http://mirrors.163.com/cpan/ ZHOUYI::ZhanPu \
