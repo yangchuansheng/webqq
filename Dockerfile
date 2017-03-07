@@ -1,9 +1,9 @@
 FROM perl:5.22
 MAINTAINER sjdy521 <sjdy521@163.com>
-RUN apt update \
-    apt-get install localepurge \
-    dpkg-reconfigure localepurge \
-    locale-gen zh_CN.UTF-8 en_US.UTF-8
+RUN apt update
+RUN apt-get install localepurge
+RUN dpkg-reconfigure localepurge
+RUN locale-gen zh_CN.UTF-8 en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
