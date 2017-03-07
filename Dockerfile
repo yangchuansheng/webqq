@@ -9,4 +9,4 @@ RUN cpanm Encode::Locale IO::Socket::SSL Mojolicious Mojo::Webqq \
     && mkdir /root/webqq
 WORKDIR /root/webqq
 COPY qq.pl qq.pl
-CMD perl qq.pl -e 'Mojo::Webqq->new(log_encoding=>"utf8")'
+CMD perl qq.pl -e 'Mojo::Webqq->new(log_encoding=>"unicode")'
