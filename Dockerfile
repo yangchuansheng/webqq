@@ -1,11 +1,7 @@
 FROM perl:5.22
 MAINTAINER sjdy521 <sjdy521@163.com>
-RUN apt update
-RUN apt-get install -y localepurge
-RUN locale-gen zh_CN.UTF-8 en_US.UTF-8
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US:en
-ENV LC_ALL en_US.UTF-8
+ENV TZ=Asia/Shanghai
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN cpanm Mojo::Webqq \
     && cpanm Mojo::SMTP::Client \
     && cpanm --mirror http://mirrors.163.com/cpan/ ZHOUYI::ZhanPu \
@@ -13,4 +9,4 @@ RUN cpanm Mojo::Webqq \
     && mkdir /root/webqq
 WORKDIR /root/webqq
 COPY qq.pl qq.pl
-CMD ["perl","qq.pl"]
+CMD perl qq.pl -e 'Mojo::Webqq->new(log_encoding=>"utf8")'
